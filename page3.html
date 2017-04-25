@@ -2,18 +2,19 @@
 <html>
 <body>
 
-<form action="/test.php">
-  <fieldset>
-    <legend>Personal information:</legend>
-    First name:<br>
-    <input type="text" name="firstname">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname">
-    <br><br>
-    <input type="submit" value="Submit">
-  </fieldset>
+<h2>Send e-mail to reckeraerial@gmail.com:</h2>
+
+<form action="mailto:reckeraerial@gmail.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
 </form>
+
 
 
 
