@@ -1,8 +1,17 @@
-<html>
-<body>
+<?php
+if<!isset($_POST['submit']
+          {
+            //This page should not be accessed directly. Need to submit the form.
+            echo "error; you need to submit the form!";
+          }
+          $name = $_POST['name'];
+          $email = $_POST['email'];
+          $message = $_POST['message'];
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
-
-</body>
-</html>
+//validate first
+if(empty($name) || empty($email))
+          {
+            echo "Name and email are manditory!";
+            exit;
+          }
+          
