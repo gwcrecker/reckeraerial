@@ -30,4 +30,5 @@ $headers= "From: $email_from \r\n";
     
     mail($to,$email_subject,$email,$email_body,$headers);
           //sent
+    header( 'Location: www.reckeraerial.com' ) ;
 ?>
