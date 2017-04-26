@@ -1,52 +1,43 @@
 
+
+
+
+<?php 
+if(isset($_POST['submit'])){
+    $to = "reckeraerial@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
 <!DOCTYPE html>
-<html>
+<head>
+<title>Form submission</title>
+</head>
 <body>
 
-  
-<h2>Send e-mail to reckeraerial@gmail.com:</h2>
-
-<form action="" method="post" enctype="text/plain">
-Name:<br>
-<input type="text" name="name"><br>
-E-mail:<br>
-<input type="text" name="email"><br>
-Comment:<br>
-<input type="text" name="message" size="50"><br><br>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
+<form action="" method="post">
+First Name: <input type="text" name="first_name"><br>
+Last Name: <input type="text" name="last_name"><br>
+Email: <input type="text" name="email"><br>
+Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
 </form>
 
-
-
-
 </body>
-</html>
+</html> 
 
-<?php
-if(!isset($_POST['submit']))
-          {
-            //This page should not be accessed directly. Need to submit the form.
-            echo "error; you need to submit the form!";
-          }
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
-//validate first
-if(empty($name) || empty($email))
-          {
-            echo "Name and email are manditory!";
-            exit;
-          }
-$email_from='reckeraerial@gmail.com';
-$email_subject="New Form Submission";
-$email_body="You have recieved a new message from the user $name. \n".
-    "email address: $visitor_email\n".
-    "here is the message: \n $message".  
-$to= "reckeraerial@gmail.com";
-$headers= "From: $email_from \r\n";          
-          //send the email
-    mail($to,$email_subject,$email,$email_body,$headers);
-          //sent
-    header( 'Location: www.reckeraerial.com' ) ;
-?>
+
+  
