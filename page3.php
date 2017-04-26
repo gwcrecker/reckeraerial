@@ -1,3 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  
+<h2>Send e-mail to reckeraerial@gmail.com:</h2>
+
+<form action="" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="email"><br>
+Comment:<br>
+<input type="text" name="message" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+
+
+
+
+</body>
+</html>
+
 <?php
 if(!isset($_POST['submit']))
           {
@@ -25,27 +50,3 @@ $headers= "From: $email_from \r\n";
           //sent
     header( 'Location: www.reckeraerial.com' ) ;
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-
-  
-<h2>Send e-mail to reckeraerial@gmail.com:</h2>
-
-<form action="" method="post" enctype="text/plain">
-Name:<br>
-<input type="text" name="name"><br>
-E-mail:<br>
-<input type="text" name="email"><br>
-Comment:<br>
-<input type="text" name="message" size="50"><br><br>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-</form>
-
-
-
-
-</body>
-</html>
